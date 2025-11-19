@@ -59,7 +59,7 @@
                 Yihan Zhou<sup>1</sup>,
               </span>
               <span class="author-block">
-                Xuemiao Xu<sup>1,3,4,*</sup>,
+                Xuemiao Xu<sup>1,3,4,5*</sup>,
               </span>
               <span class="author-block">
                 <a href="https://scholar.google.com/citations?user=KxYpmCYAAAAJ&hl=en">Cheng Xu</a><sup>2*</sup>,
@@ -71,7 +71,7 @@
                 <a href="https://research.polyu.edu.hk/en/persons/jing-qin">Jing Qin</a><sup>2</sup>,
               </span>
               <span class="author-block">
-                <a href="https://shengfenghe.github.io/">Shengfeng He</a><sup>5</sup>
+                <a href="https://shengfenghe.github.io/">Shengfeng He</a><sup>6</sup>
               </span>
             </div>
   
@@ -79,8 +79,9 @@
               <span class="author-block"><sup>1</sup>South China University of Technology,</span>
               <span class="author-block"><sup>2</sup>The Hong Kong Polytechnic University,</span>
               <span class="author-block"><sup>3</sup>Guangdong Engineering Center for Large Model and GenAI Technology,</span>
-              <span class="author-block"><sup>4</sup>Guangdong Provincial Key Lab of Computational Intelligence and Cyberspace Information,</span>
-              <span class="author-block"><sup>5</sup>Singapore Management University</span>
+              <span class="author-block"><sup>4</sup>State Key Laboratory of Subtropical Building and Urban Science,</span>
+              <span class="author-block"><sup>5</sup>Ministry of Education Key Laboratory of Big Data and Intelligent Robot,</span>
+              <span class="author-block"><sup>6</sup>Singapore Management University</span>
             </div>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
@@ -109,24 +110,14 @@
                     <span>arXiv</span>
                   </a>
                 </span>
-                <!-- Code Link. -->
-                <!-- <span class="link-block">
-                  <a href=""
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                        <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                    </a>
-                </span> -->
                 <!-- Dataset Link. -->
                 <span class="link-block">
-                  <a href=""
+                  <a href="https://huggingface.co/datasets/ZikaiHuang/SingMoSub"
                      class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                         <i class="far fa-images"></i>
                     </span>
-                    <span>Dataset(Coming Soon)</span>
+                    <span>Dataset</span>
                   </a>
                 </span>
               </div>
@@ -150,13 +141,17 @@
       <div class="column is-four-fifths">
         <div class="content has-text-justified">
           <p>
-            Singing-driven 3D head animation is a compelling yet underexplored task with broad applications in virtual avatars, entertainment, and education. Compared to speech, singing conveys richer emotional nuance, dynamic prosody, and lyric-conditioned semantics, necessitating the synthesis of fine-grained and temporally coherent facial motion. Existing speech-driven approaches, which typically map audio directly to motion through implicit phoneme-to-viseme correspondences, often yield over-smoothed, emotionally flat, and semantically inconsistent results. These limitations render them inadequate for the unique demands of singing-driven animation.
+            Singing-driven 3D head animation is a compelling yet underexplored task with broad applications in virtual avatars, entertainment, and education.
+            Existing speech-driven approaches, which typically map audio directly to motion through implicit phoneme-to-viseme correspondences, often yield over-smoothed, emotionally flat, and semantically inconsistent results.
+            These limitations render them inadequate for the unique demands of singing-driven animation.
+            To address this challenge, we propose <b><i>Think2Sing</i></b>, a unified diffusion-based framework that integrates pretrained large language models to generate semantically consistent and temporally coherent 3D head animations conditioned on both lyrics and acoustics.
           </p>
           <p>
-            To address this challenge, we propose <b><i>Think2Sing</i></b>, a unified diffusion-based framework that integrates pretrained large language models to generate semantically consistent and temporally coherent 3D head animations conditioned on both lyrics and acoustics. Central to our approach is the introduction of an auxiliary semantic representation called <b><i>motion subtitles</i></b>, derived via a novel Singing Chain-of-Thought reasoning process augmented with acoustic-guided retrieval.
-            These subtitles contain precise timestamps and region-specific motion descriptions, serving as interpretable and expressive motion priors that guide the animation process. Rather than learning a direct audio-to-motion mapping, we reformulate the task as a <b><i>motion intensity prediction</i></b> problem, which quantifies the dynamic behavior of key facial regions. This reformulation decomposes the complex mapping into tractable subtasks, facilitates region-wise control, and improves the modeling of subtle and expressive motion patterns.
-            To support this task, we construct the first multimodal singing dataset comprising synchronized video clips, acoustic descriptors, and structured motion subtitles. This dataset enables expressive and diverse motion learning under rich acoustic and semantic conditioning.
-            Extensive experiments demonstrate that Think2Sing significantly outperforms state-of-the-art methods in realism, expressiveness, and emotional fidelity. Furthermore, our framework supports flexible subtitle-conditioned editing, enabling precise and user-controllable animation synthesis.
+            Central to our framework is the introduction of <b><i>motion subtitles</i></b>, a structured, time-aligned representation generated via a Singing Chain-of-Thought process with acoustic-guided retrieval.
+            These subtitles provide region-specific expressive cues that serve as interpretable priors for animation synthesis. We further formulate head animation as motion intensity prediction over key facial regions, enabling fine-grained control and more faithful expressive modeling.
+            To support this paradigm, we construct the first multimodal singing dataset with synchronized 3D motion, acoustic features, and aligned motion subtitles, enabling semantically grounded and expressive motion learning.
+            Extensive experiments demonstrate that Think2Sing significantly outperforms state-of-the-art methods in realism, expressiveness, and emotional fidelity.
+            Furthermore, our framework supports flexible subtitle-conditioned editing, enabling precise and user-controllable animation synthesis.
           </p>
         </div>
       </div>
